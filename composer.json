@@ -1,0 +1,25 @@
+{
+    "name": "ride/wba-dashboard",
+    "description": "Backend dashboard",
+    "license": "MIT",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Joris Vandeweerd",
+            "email": "joris@statik.be"
+        },
+        {
+            "name": "Kristof Serré",
+            "email": "kristof@statik.be"
+        }
+    ],
+    "require": {
+        "ride/web": ">=0.2.0",
+        "google/apiclient": "^1.1@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "ride\\web\\controller\\": ["src/"]
+        }
+    }
+}

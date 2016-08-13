@@ -1,0 +1,32 @@
+{
+    "routes": [
+        {
+            "path": "/admin",
+            "controller": "ride\\web\\dashboard\\controller\\DashboardController",
+            "action": "indexAction",
+            "id": "admin"
+        },
+        {
+            "path": "/admin/dashboard/add/%region%/%widget%",
+            "controller": "ride\\web\\dashboard\\controller\\DashboardController",
+            "action": "addAction",
+            "id": "admin.dashboard.add"
+            /*"methods": "POST"*/
+        },
+
+        {
+            "path": "/admin/dashboard/remove/%widget%",
+            "controller": "ride\\web\\dashboard\\controller\\DashboardController",
+            "action": "removeAction",
+            "id": "admin.dashboard.remove"
+            /*"methods": "POST"*/
+        },
+        {
+            "path": "/admin/dashboard/properties/%widget%",
+            "controller": "ride\\web\\dashboard\\controller\\DashboardController",
+            "action": "propertiesAction",
+            "id": "admin.dashboard.properties",
+            "methods": ["GET", "POST"]
+        }
+    ]
+}

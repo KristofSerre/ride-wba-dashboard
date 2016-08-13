@@ -1,0 +1,103 @@
+{
+    "dependencies": [
+        {
+            "class": "ride\\web\\dashboard\\DashboardModel",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "cachePool",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\cache\\pool\\CachePool",
+                                "id": "dashboard"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interfaces": "ride\\library\\cache\\pool\\CachePool",
+            "class": "ride\\library\\cache\\pool\\DirectoryCachePool",
+            "id": "dashboard",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "directory",
+                            "type": "dependency",
+                            "properties": {
+                                "interface": "ride\\library\\system\\file\\File",
+                                "id": "dashboard"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "class": "ride\\library\\system\\file\\File",
+            "id": "dashboard",
+            "calls": [
+                {
+                    "method": "__construct",
+                    "arguments": [
+                        {
+                            "name": "path",
+                            "type": "parameter",
+                            "properties": {
+                                "key": "system.directory.dashboard"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "interfaces": "ride\\web\\dashboard\\widget\\WidgetModel",
+            "class": "ride\\web\\dashboard\\widget\\DependencyWidgetModel",
+            "id": "dependency"
+        },
+        {
+            "interfaces": "ride\\web\\mvc\\view\\TemplateView",
+            "class": "ride\\web\\dashboard\\view\\DashboardTemplateView",
+            "id": "dashboard"
+        },
+        {
+            "interfaces": "ride\\web\\mvc\\view\\TemplateView",
+            "class": "ride\\web\\mvc\\view\\TemplateView",
+            "id": "widget"
+        },
+        {
+            "interfaces": "ride\\web\\dashboard\\widget\\Widget",
+            "class": "ride\\web\\dashboard\\controller\\widget\\HelloWidget",
+            "id": "hello"
+        },
+        {
+            "interfaces": "ride\\web\\dashboard\\widget\\Widget",
+            "class": "ride\\web\\dashboard\\controller\\widget\\NotesWidget",
+            "id": "notes"
+        },
+        {
+            "interfaces": "ride\\web\\dashboard\\widget\\Widget",
+            "class": "ride\\web\\dashboard\\controller\\widget\\WysiwygWidget",
+            "id": "wysiwyg"
+        },
+
+        {
+            "interfaces": "ride\\web\\dashboard\\widget\\Widget",
+            "class": "ride\\web\\dashboard\\controller\\widget\\GoogleAnalyticsWidget",
+            "id": "analytics"
+        }
+        ,
+        {
+            "interfaces": "ride\\web\\dashboard\\widget\\Widget",
+            "class": "ride\\web\\dashboard\\controller\\widget\\EntryModifiedWidget",
+            "id": "entry.modified"
+        }
+
+    ]
+}
